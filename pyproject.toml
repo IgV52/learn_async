@@ -7,6 +7,7 @@ authors = ["Ivan Grubov <gruivanvik@mail.ru>"]
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "^2.28.2"
+aiohttp = "^3.8.4"
 
 [tool.poetry.dev-dependencies]
 
