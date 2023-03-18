@@ -8,6 +8,7 @@ authors = ["Ivan Grubov <gruivanvik@mail.ru>"]
 python = "^3.11"
 requests = "^2.28.2"
 aiohttp = "^3.8.4"
+asyncpg = "^0.27.0"
 
 [tool.poetry.dev-dependencies]
 

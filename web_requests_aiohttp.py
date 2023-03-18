@@ -1,16 +1,18 @@
-from aiohttp import ClientSession
+from aiohttp import ClientSession, ClientTimeout
 from utils import async_timed
 
 import asyncio
 
 @async_timed()
 async def fetch_status(session: ClientSession, url: str) -> int:
-    async with session.get(url) as res:
+    ten_millis = ClientTimeout(total=2)
+    async with session.get(timeout=ten_millis, url=url) as res:
         return res.status
     
 @async_timed()
 async def main():
-    async with ClientSession() as session:
+    session_timeout = ClientTimeout(total=1, connect=.1)
+    async with ClientSession(timeout=session_timeout) as session:
         url = "https://example.com"
         status = await fetch_status(session, url)
         print(f"Состояние для {url} было равно {status}")

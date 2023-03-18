@@ -6,6 +6,9 @@ poetry.lock
 # C extensions
 *.so
 
+/pgdata
+/pgadmin
+
 # Distribution / packaging
 .Python
 build/
